@@ -12,11 +12,13 @@ Workflow for friends and collaborators to adapt.
 ### 1. Data generation to finetune model
 
 Set our in-domain dataset in `./data/instruction.json`.   
-Otherwise, as an example, here's how to parse a PDF and generate some QA pairs.  
+If needed, we can parse PDFs to generate some QA pairs.  
 
 1. Parse source PDFs: `uv run 1a_parse_pdf.py`
 2. Generate QA pairs: `uv run 1b_generate_qa_pairs.py`
-3. Clean up dataset quality: `uv run 1c_data_quality.py`
+3. Clean up dataset quality: `uv run 1c_data_quality.py`  
+
+Otherwise, use `./data/original` and skip to the next step.
 
 ### 2. Finetune on runpod
 
@@ -36,6 +38,6 @@ Run finetuned model on ollama
 `ollama run tm1bud --verbose`
 
 ## References
-[Source tutorial](https://youtu.be/D3pXSkGceY0), which I've adapted for greater ease of reading and using  
+[Source tutorial](https://youtu.be/D3pXSkGceY0), which I've adapted for greater ease of understanding  
 [LLaMA docs](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_2/)
 [docling](https://www.docling.ai/)
