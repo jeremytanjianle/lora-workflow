@@ -15,7 +15,11 @@ def format_chat_template(
     tokenizer
 ):
     """
-    Formats into Llama's chat template
+    Formats into Llama's chat template.
+
+    Expected output
+    ---------------
+    {'question': 'Which software tools are necessary for creating cubes and editing dimensions in IBM Cognos TM1 according to the documentation?', 'answer': 'TM1 Perspectives or TM1 Architect are required for creating cubes, editing dimensions, and establishing replications in IBM Cognos TM1.', 'instruction': 'Which software tools are necessary for creating cubes and editing dimensions in IBM Cognos TM1 according to the documentation?', 'response': 'TM1 Perspectives or TM1 Architect are required for creating cubes, editing dimensions, and establishing replications in IBM Cognos TM1.', 'text': "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, honest and harmless assitant designed to help engineers. Think through each question logically and provide an answer. Don't make things up, if you're unable to answer a question advise the user that you're unable to answer as it is outside of your scope.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nWhich software tools are necessary for creating cubes and editing dimensions in IBM Cognos TM1 according to the documentation?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nTM1 Perspectives or TM1 Architect are required for creating cubes, editing dimensions, and establishing replications in IBM Cognos TM1.<|eot_id|>"}
     """
     system_prompt = """You are a helpful, honest and harmless assitant designed to help engineers. Think through each question logically and provide an answer. Don't make things up, if you're unable to answer a question advise the user that you're unable to answer as it is outside of your scope."""
 
@@ -111,14 +115,14 @@ if __name__ == '__main__':
         args=SFTConfig(
             output_dir="meta-llama/Llama-3.2-1B-SFT",
             num_train_epochs=50,
-            # max_length=2048,
+            max_length=2048,
             # logging_steps=10,
             # save_steps=100,
             # per_device_train_batch_size=1,
             # gradient_accumulation_steps=4,
+            dataset_text_field="text",  # Critical: tells trainer to use the formatted text field
         ),
         peft_config=peft_config,
-        dataset_text_field="text",  # Critical: tells trainer to use the formatted text field
     )
 
     logger.info("Starting training")

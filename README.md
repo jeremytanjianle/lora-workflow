@@ -39,5 +39,5 @@ Run finetuned model on ollama
 
 ## References
 [Source tutorial](https://youtu.be/D3pXSkGceY0), which I've adapted for greater ease of understanding  
-[LLaMA docs](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_2/)
-[docling](https://www.docling.ai/)
+[LLaMA docs](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_2/)  
+[docling](https://www.docling.ai/)  
