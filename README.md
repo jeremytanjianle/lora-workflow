@@ -36,6 +36,6 @@ Run finetuned model on ollama
 `ollama run tm1bud --verbose`
 
 ## References
-[Source tutorial](https://youtu.be/D3pXSkGceY0)  
+[Source tutorial](https://youtu.be/D3pXSkGceY0), which I've adapted for greater ease of reading and using  
 [LLaMA docs](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_2/)
 [docling](https://www.docling.ai/)

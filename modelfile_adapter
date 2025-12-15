@@ -1,0 +1,2 @@
+FROM llama3.2
+ADAPTER "C:\Users\jerem\Desktop\LearningLoRA\EndToEndLoRA\final_model\adapter_config.json"
